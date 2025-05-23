@@ -51,6 +51,6 @@ jobs:
         forcePublish: ${{ github.event.inputs.forcePublish == 'true' }}
         buildEnv: ${{ steps.prepareEnvVarsAndSecrets.outputs.environmentVariablesYamlBase64 }}
         buildSecrets: ${{ steps.prepareEnvVarsAndSecrets.outputs.secretsYamlBase64 }}
-        buildAzureCredentials: ${{ secrets.AZURE_PUBLISH_CREDENTIALS }}
+        buildAzureCredentials: ${{ secrets.AZURE_PUBLISHER_CREDENTIALS }}
         secretsEncryptionKey: ${{ secrets.SHARED_WORKFLOW_KEY }}
         token: ${{ secrets.GITHUB_TOKEN }}
