@@ -31,8 +31,14 @@ $SkipPackage = $false
 
 # Python build config
 $PythonProjectDir = $here
-$PythonPackageRepositoryUrl = ""
-$UseAzCliAuthForAzureArtifacts = $false
+$PythonSourceDirectory = 'src'
+
+# The target PyPi repository for publishing your WHL packages can be set here, or passed by
+# the CI/CD server via the 'ZF_BUILD_PYTHON_PUBLISH_REPOSITORY_URL' environment variable.
+# $PythonPackageRepositoryUrl = ""
+
+# Uncomment if publishing to Azure Artifacts, to use Azure CLI auth instead of a AzDO PAT.
+# $UseAzCliAuthForAzureArtifacts = $true
 
 # Customise the build process
 task . FullBuild
