@@ -491,3 +491,4 @@ _packages/
 _codeCoverage/
 .zf/extensions
 *test-results.xml
+behave-test-reports-temp/

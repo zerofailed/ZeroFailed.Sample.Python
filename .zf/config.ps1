@@ -8,7 +8,7 @@ $zerofailedExtensions = @(
         # References the extension from its GitHub repository. If not already installed, use latest version from 'main' will be downloaded.
         Name = "ZeroFailed.Build.Python"
         GitRepository = "https://github.com/zerofailed/ZeroFailed.Build.Python"
-        GitRef = "feature/initial-version"
+        GitRef = "feature/uv"
     }
 )
 
@@ -30,6 +30,7 @@ $SkipAnalysis = $false
 $SkipPackage = $false
 
 # Python build config
+$PythonProjectManager = 'uv'
 $PythonProjectDir = $here
 $PythonSourceDirectory = 'src'
 

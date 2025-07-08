@@ -1,22 +1,29 @@
-[tool.poetry]
-name = "shapes_sample"
-version = "0.0.1"
+[project]
+name = "shapes-sample"
+version = "0.1.0"
 description = "Library of code for working with shapes. Originated from https://github.com/Lmooney25/shapes"
-authors = ["maintainer <maintainer@nowhere.org>"]
+authors = [{ name = "maintainer", email = "maintainer@nowhere.org" }]
+requires-python = "~=3.10.0"
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[dependency-groups]
+dev = ["flake8>=6.1.0,<7"]
+test = [
+    "pytest>=7.1.3,<8",
+    "pytest-cov>=3.0.0,<4",
+    "behave>=1.2.6,<2",
+    "coverage~=7.3.3",
+    "junitparser~=3.1.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-flake8 = "^6.1.0"
-
-[tool.poetry.group.test.dependencies]
-pytest = "^7.1.3"
-pytest-cov = "^3.0.0"
-behave = "^1.2.6"
-coverage = "~7.3.3"
-junitparser = "~3.1.0"
+[tool.uv]
+default-groups = [
+    "dev",
+    "test",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shapes_sample"]
