@@ -492,3 +492,4 @@ _codeCoverage/
 .zf/extensions
 *test-results.xml
 behave-test-reports-temp/
+dist/
